@@ -60,3 +60,16 @@ Host alias # Here put an alias to the server
 ~~~
 
 Now you can log in to the server with `ssh alias`
+
+## Windows Subsystem for Linux (WSL) extra step
+If you have WSL installed, you must create a copy of the `config` file to your local disk. 
+WSL installs all the files into a different location than your local disc: `/home/$User_name/`. While, your normal Windows file is located in a location that looks similar to this one:  `/mnt/c/Users/$User_name/`.
+
+The former config file must have been saved and created into the `/home/$User_name/` folder. Now you need to copy the same file to the `./ssh` folder inside your local machine `/mnt/c/Users/$User_name/`
+~~~
+cp /home/$User_name/.ssh/config /mnt/c/Users/$User_name/.ssh/
+~~~
+
+Now, you should be able to connect directly to your ssh remote
+
+
